@@ -1,0 +1,11 @@
+project:
+  key: UA
+  plan:
+    key: UAUI
+    name: UA-UI
+stages:
+  - jobs:
+      - scripts:
+          - echo 'Going to slay the red dragon, watch me'
+          - sleep 1
+          - echo 'Victory!'
