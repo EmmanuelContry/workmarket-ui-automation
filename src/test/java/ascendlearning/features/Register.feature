@@ -4,5 +4,7 @@ Feature: Register
   Scenario: Register Random user
     Given I click register button
     When I register a random user 
-    Then accept term button is visible
+    And I click the accept term button
+    And I click in continous education
+    And I click in all courses
 

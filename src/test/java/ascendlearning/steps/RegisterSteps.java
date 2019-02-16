@@ -5,6 +5,7 @@ import ascendlearning.pages.RegisterPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.core.Serenity;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -44,10 +45,17 @@ public class RegisterSteps extends ScenarioSteps {
     	registerPage.fillPostalCode(postalCode);
     	registerPage.clickRegisterButton(); 
     	registerPage.waitForAcceptTermButton();
+    	
+    	Serenity.setSessionVariable("username").to(firstName);
     }
     
     @When("^accept term button is visible$")
     public void acceptTermIsVisible() {
     	assertThat(registerPage.acceptTermButtonIsVisible());
+    }
+    
+    @When("^I click the accept term button$")
+    public void clickAcceptTermButton() {
+    	registerPage.clickAcceptTermButton();
     }
 }

@@ -81,6 +81,10 @@ public class RegisterPage extends PageObject {
     	return acceptTermButton.isVisible();
     }
     
+    public void clickAcceptTermButton() {
+    	acceptTermButton.click();
+    }
+    
     public String getTitleText() {
         return firstNameField.getText().trim();
     }
