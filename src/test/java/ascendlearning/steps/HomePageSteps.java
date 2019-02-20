@@ -14,9 +14,21 @@ public class HomePageSteps extends ScenarioSteps {
 	HomePage homePage;
 
     @Given("^I click register button$")
-    public void iClickRegisterBUtton() {
+    public void iClickRegisterButton() {
     	homePage.open();
     	homePage.clickRegisterButton();
+    }
+    
+    @Given("^I click login button$")
+    public void iClickLoginButton() {
+    	homePage.open();
+    	homePage.clickLoginButton();
+    }
+    
+    @Given("^I click my account button$")
+    public void iClickMyAccountButton() {
+    	homePage.open();
+    	homePage.clickMyAccountButton();
     }
     
     @When("^I click in continous education$")
@@ -30,10 +42,21 @@ public class HomePageSteps extends ScenarioSteps {
     	homePage.clickAllCourses();
     }
     
-    @When("^the welcome message correspond to the created user$") 
+    @When("^the welcome message correspond to the correct user$") 
     public void welcomeMessageCorrespondToUser() {
     	String userName = Serenity.sessionVariableCalled("username");
     	String welcomeMessage=homePage.getWelcomeMessage();
-    	assertThat("WELCOME, "+userName==welcomeMessage);
+    	assertThat("WELCOME, "+userName.toUpperCase()==welcomeMessage);
+    }
+    
+    @When("^the welcome message correspond to the correct user \"([^\"]*)\"$") 
+    public void welcomeMessageCorrespondToUser(String userName) {
+    	String welcomeMessage=homePage.getWelcomeMessage();
+    	assertThat("WELCOME, "+userName.toUpperCase()==welcomeMessage);
+    }
+    
+    @Then("^the log out button exists$") 
+    public void logOutButtonExists() {
+    	assertThat(homePage.btnLogOutDisplayed());
     }
 }

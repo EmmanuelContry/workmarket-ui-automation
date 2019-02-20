@@ -10,6 +10,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.server.handler.FindElements;
+import org.openqa.selenium.support.FindAll;
 
 import com.github.javafaker.Faker;
 
@@ -151,10 +153,14 @@ public class RegisterPage extends PageObject {
     public void fillPostalCode(String postalcode) {
     	postalcodeField.type(postalcode);
     }
-	
 
-    	
-    	
-    
-    
+    public List<String> getStatesFromDropDown() {
+    	List<String> list = new ArrayList<String>();
+    	List<WebElementFacade> statesList = 
+    			findAll("#street_address_billing_province > option");
+		for(WebElement element : statesList) {
+			list.add(element.getText());
+		}
+		return list;	
+	}
 }
