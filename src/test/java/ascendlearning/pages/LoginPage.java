@@ -28,7 +28,7 @@ public class LoginPage extends PageObject {
 	private WebElementFacade imgAFAALogo;
 	
 	@FindBy (css ="div[class='alert alert-danger']")
-	private WebElementFacade tbxLoginerrormessage;
+	private WebElementFacade tbxLoginErrorMessage;
 	
 	@FindBy (id ="reset_password_question")
 	private WebElementFacade btnSecurityQuestion;
@@ -123,6 +123,14 @@ public class LoginPage extends PageObject {
 	}
 	
 	public String getForgotPasswordErrorMessage() {
-		return tbxLoginerrormessage.getText();
+		return tbxLoginErrorMessage.getText();
+	}
+	
+	public boolean loginPageDisplayed(){
+		return lnkCreateNewAccount.isDisplayed();
+	}
+	
+	public String getLoginErrorMessage() {
+		return tbxLoginErrorMessage.getText();
 	}
 }

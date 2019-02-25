@@ -22,10 +22,10 @@ public class ProductDetailsPage extends PageObject {
 	private WebElementFacade btnAddToCar;
 	
 	@FindBy (css ="span[class*='sfRegPrice']")
-	private WebElementFacade txtproductPrice;
+	private WebElementFacade txtProductPrice;
 	
 	@FindBy (css ="h3[class*='heading-font']")
-	private WebElementFacade txtproductName;
+	private WebElementFacade txtProductName;
 	
 	public void clickAddToCarButton() {
 		waitFor(btnAddToCar);

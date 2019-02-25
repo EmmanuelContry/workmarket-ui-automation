@@ -21,7 +21,7 @@ public class LoginPageSteps extends ScenarioSteps {
     @Given("^I click forgot password link$")
     public void clickForgotPasswordLink() {
     	loginPage.clickForgotPasswordLink();
-    }
+    }    
     
     @When("^I type \"([^\"]*)\" in user name field$")
     public void typeUserNameField(String userName) {
@@ -56,5 +56,15 @@ public class LoginPageSteps extends ScenarioSteps {
 		assertThat(loginPage.forgotPasswordLinkDisplayed());
 		assertThat(loginPage.copyrightInformationDisplayed());
     }
-    
+	
+	@Then("^the login page is displayed$")
+    public void loginPageDisplayed() {
+		assertThat(loginPage.loginPageDisplayed());
+    }
+	
+	@Then("^the login error message displayed is \"([^\"]*)\"$")
+    public void theLoginErrorMsgIs(String errorMessage) {
+		String errorMessageDisplayed= loginPage.getLoginErrorMessage();
+		assertThat(errorMessage.equals(errorMessageDisplayed));
+    }
 }

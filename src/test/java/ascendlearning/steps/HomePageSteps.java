@@ -19,6 +19,11 @@ public class HomePageSteps extends ScenarioSteps {
     	homePage.clickRegisterButton();
     }
     
+    @Given("^I navigate to home page$")
+    public void iNavigateToHomePage() {
+    	homePage.open();
+    }
+    
     @Given("^I click login button$")
     public void iClickLoginButton() {
     	homePage.open();
