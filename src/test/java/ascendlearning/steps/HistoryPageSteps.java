@@ -1,10 +1,7 @@
 package ascendlearning.steps;
 
 import ascendlearning.pages.HistoryPage;
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
-import net.serenitybdd.core.Serenity;
 import net.thucydides.core.steps.ScenarioSteps;
 
 import static org.assertj.core.api.Assertions.assertThat;

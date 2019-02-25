@@ -4,11 +4,9 @@ import ascendlearning.pages.EditUserAccountPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import io.restassured.response.Response;
 import net.serenitybdd.core.Serenity;
 import net.thucydides.core.steps.ScenarioSteps;
 import static org.assertj.core.api.Assertions.assertThat;
-
 
 import com.github.javafaker.Faker;
 
@@ -28,7 +26,6 @@ public class EditUserAccountSteps extends ScenarioSteps {
     	String addressWithRandomeNumber="STE 425"+randomNumber;
     	editUserAccountPage.fillStreet2Address(addressWithRandomeNumber);
     	Serenity.setSessionVariable("randomNumber").to(addressWithRandomeNumber);
-    	
     }
     
     @Given("^I fill billing address country with \"([^\"]*)\"$")
@@ -56,6 +53,18 @@ public class EditUserAccountSteps extends ScenarioSteps {
     	String randomNumbers=editUserAccountPage.getStreetAddress2Value();
     	String expectedRandomNumbers = Serenity.sessionVariableCalled("randomNumber");
     	assertThat(randomNumbers.equals(expectedRandomNumbers));
+    }
+    
+    @Then("^last name field is read only$")
+    public void lastNameFieldIsReadOnly() {
+    	Boolean lastNameReadyOnly=editUserAccountPage.isLastNameReadOnly();
+    	assertThat(lastNameReadyOnly==false);
+    }
+    
+    @Then("^first name field is read only$")
+    public void firstNameFieldIsReadOnly() {
+    	Boolean firstNameReadyOnly=editUserAccountPage.isFirstNameReadOnly();
+    	assertThat(firstNameReadyOnly==false);
     }
     
     @When("^I click register button in edit page$")

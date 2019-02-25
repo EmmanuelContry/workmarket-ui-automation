@@ -24,6 +24,12 @@ public class ElearningCenterPageSteps extends ScenarioSteps {
 		assertThat(eLearningCenterPage.logOffTabDisplayed());
     }
     
+    @Then("^the page header is \"([^\"]*)\"$")
+    public void thePageHeaderIs(String expectedPageHeader) {
+		String displayedPageHeader=eLearningCenterPage.getPageHeader();
+		assertThat(displayedPageHeader.equals(expectedPageHeader));
+    }
+    
     @Then("^I click log off link$")
     public void iClickLogOffLink() {
     	eLearningCenterPage.clickLogOffLink();

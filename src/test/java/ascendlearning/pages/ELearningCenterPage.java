@@ -69,6 +69,10 @@ public class ELearningCenterPage extends PageObject {
 	@FindBy(css = "div[id*='admin_nav'] li:nth-child(1) a")
 	private WebElementFacade lblWelcomeUserName;
 
+	public String getELearningCenterPageTitle() {
+		return getTitle();
+	}
+	
 	public Boolean afaaLogoDisplayed() {
 		waitFor(imgAFAALog);
 		return imgAFAALog.isDisplayed();
@@ -139,5 +143,9 @@ public class ELearningCenterPage extends PageObject {
 	}
 	public Boolean userSuspendedMsgDisplayed() {
 		return lblUserSuspendedMsg.isVisible();
+	}
+	
+	public String getPageHeader(){
+		return lblPageHeader.getText();
 	}
 }

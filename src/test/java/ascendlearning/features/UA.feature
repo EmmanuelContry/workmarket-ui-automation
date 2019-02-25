@@ -148,3 +148,18 @@ Scenario: A.11 Verify Suspended User and UserDetails
     And I click certificates tab left side
     Then the page title is "My Certificates"
     And the certificate "International Certified Personal Trainer" is displayed
+
+@123
+Scenario: A.12 Verify Suspended User and UserDetails
+	Given I click my account button  
+	And the login page is displayed 
+	And I login typing username "4657Duncan" and password "Pq4B3rBxNjvAa!" and clicking login button 
+	Given I click my account button
+	Then the page title is "eLearning Center"
+	And I click account tab
+	Then the page header is "ACCOUNT DETAILS"
+	And the change button displayed
+	And I click on change button
+	Then the page title is "NASMCentral Login"
+	And last name field is read only
+	And first name field is read only

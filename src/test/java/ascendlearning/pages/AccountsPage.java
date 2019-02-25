@@ -45,4 +45,8 @@ public class AccountsPage extends PageObject {
 	public void clickOnChangeButton() {
 		btnChange.click();
 	}
+	
+	public boolean isChangeButtonDisplayed(){
+		return btnChange.isCurrentlyVisible();
+	}
 }

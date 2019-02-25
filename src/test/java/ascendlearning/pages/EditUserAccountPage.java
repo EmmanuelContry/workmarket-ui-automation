@@ -162,4 +162,12 @@ public class EditUserAccountPage extends PageObject {
 	public void clickOnRegister() {
 		btnUpdate.click();
 	}
+	
+	public Boolean isFirstNameReadOnly() {
+		return txtFirstName.isEnabled();
+	}
+	
+	public Boolean isLastNameReadOnly() {
+		return txtLastName.isEnabled();
+	}
 }
