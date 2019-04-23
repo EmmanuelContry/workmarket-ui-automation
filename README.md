@@ -1,4 +1,4 @@
-# UA UI Automation
+# Work Market Automation
 
 ## Dependencies
 
@@ -14,9 +14,9 @@
 ## Scripting
 
 To script tests:
-1. Begin by creating a .feature file in `src/test/java/ascendlearning/features/` with the required steps
-2. Create matching Step Definitions in `src/test/java/ascendlearning/steps/` for any unimplemented steps
-3. Create Page Objects in `src/test/java/ascendlearning/pages/` for any page interactions required from the steps
+1. Begin by creating a .feature file in `src/test/java/workmarket/features/` with the required steps
+2. Create matching Step Definitions in `src/test/java/workmarket/steps/` for any unimplemented steps
+3. Create Page Objects in `src/test/java/workmarket/pages/` for any page interactions required from the steps
 
 ## Execute
 
